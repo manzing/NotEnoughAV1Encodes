@@ -1695,7 +1695,7 @@ namespace NotEnoughAV1Encodes
             };
 
             // Preset
-            settings += quality + " -preset " + GenerateMPEGEncoderSpeed();
+            settings += quality + " -preset " + GenerateHEVCEncoderSpeed();
 
             return settings;
         }
@@ -1717,7 +1717,24 @@ namespace NotEnoughAV1Encodes
 
             return settings;
         }
-
+        
+        private string GenerateHEVCEncoderSpeed()
+        {
+            return SliderEncoderPreset.Value switch
+            {
+                0 => "0",
+                1 => "1",
+                2 => "2",
+                3 => "3",
+                4 => "4",
+                5 => "5",
+                6 => "6",
+                7 => "7",
+                8 => "8",
+                9 => "9",
+                _ => "4",
+            };
+        }
         private string GenerateMPEGEncoderSpeed()
         {
             return SliderEncoderPreset.Value switch
