@@ -1684,12 +1684,12 @@ namespace NotEnoughAV1Encodes
 
         private string GenerateHEVCFFmpegCommand()
         {
-            string settings = "-c:v libsvthevc";
+            string settings = "-c:v libsvt_hevc";
 
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
-                0 => " -crf " + SliderQuality.Value,
+                0 => " -qp " + SliderQuality.Value,
                 2 => " -b:v " + TextBoxAVGBitrate.Text + "k",
                 _ => ""
             };
