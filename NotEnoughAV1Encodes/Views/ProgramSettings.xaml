@@ -105,11 +105,11 @@
                 <ComboBox x:Name="ComboBoxLanguage" HorizontalAlignment="Center" VerticalAlignment="Center" Width="175" SelectedIndex="0" SelectionChanged="ComboBoxLanguage_SelectionChanged">
                     <ComboBoxItem Content="English"/>
                     <ComboBoxItem Content="Deutsch (German)"/>
-                    <ComboBoxItem Content="Français (French)"/>
                     <ComboBoxItem Content="中国人 (Chinese Simplified)"/>
                     <ComboBoxItem Content="Русский (Russian)"/>
                     <ComboBoxItem Content="日本語 (Japanese)"/>
                     <ComboBoxItem Content="Italiano (Italian)"/>
+                    <ComboBoxItem Content="Français (French)"/>
                 </ComboBox>
 
             </Grid>
