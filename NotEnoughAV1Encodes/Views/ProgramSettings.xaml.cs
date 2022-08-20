@@ -47,6 +47,7 @@ namespace NotEnoughAV1Encodes.Views
                 "ru-RU" => 3,
                 "ja-JP" => 4,
                 "it-IT" => 5,
+                "fr-FR" => 6,
                 _ => 0,
             };
         }
