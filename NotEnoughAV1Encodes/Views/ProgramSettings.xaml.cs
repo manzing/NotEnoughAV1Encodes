@@ -133,6 +133,7 @@ namespace NotEnoughAV1Encodes.Views
                 3 => new CultureInfo("ru-RU"),
                 4 => new CultureInfo("ja-JP"),
                 5 => new CultureInfo("it-IT"),
+                6 => new CultureInfo("fr_FR"),
                 _ => new CultureInfo("en"),
             };
             LocalizeDictionary.Instance.Culture = settingsDBTemp.CultureInfo;
