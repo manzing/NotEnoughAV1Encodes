@@ -288,7 +288,7 @@
                                 <ComboBoxItem Content="rav1e (AV1)" />
                                 <ComboBoxItem Content="svt-av1 (AV1)" />
                                 <Separator />
-                                <ComboBoxItem Content="x265 (HEVC FFmpeg)" />
+                                <ComboBoxItem Content="x265 (SVT-HEVC FFmpeg)" />
                                 <ComboBoxItem Content="x264 (AVC FFmpeg)" />
                             </ComboBox>
                             <Label Content="{lex:Loc LabelBitDepth}" HorizontalAlignment="Left" Margin="19,54,0,0" VerticalAlignment="Top" Width="111" />
