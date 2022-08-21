@@ -764,6 +764,21 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.IsOn = false;
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
                 }
+				
+				else if (ComboBoxVideoEncoder.SelectedIndex is 11)
+                {
+                    //SVT-HEVC
+                    TextBoxMaxBitrate.Visibility = Visibility.Collapsed;
+                    TextBoxMinBitrate.Visibility = Visibility.Collapsed;
+                    SliderEncoderPreset.Maximum = 12;
+                    SliderEncoderPreset.Value = 7;
+                    SliderQuality.Maximum = 51;
+                    SliderQuality.Value = 18;
+                    CheckBoxTwoPassEncoding.IsEnabled = false;
+                    CheckBoxTwoPassEncoding.IsOn = false;
+                    CheckBoxRealTimeMode.IsOn = false;
+                    CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
+                }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
                 {
                     if (ComboBoxQualityMode.SelectedIndex == 2)
