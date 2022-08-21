@@ -770,7 +770,7 @@ namespace NotEnoughAV1Encodes
                     //SVT-HEVC
                     TextBoxMaxBitrate.Visibility = Visibility.Collapsed;
                     TextBoxMinBitrate.Visibility = Visibility.Collapsed;
-                    SliderEncoderPreset.Maximum = 12;
+                    SliderEncoderPreset.Maximum = 11;
                     SliderEncoderPreset.Value = 7;
                     SliderQuality.Maximum = 51;
                     SliderQuality.Value = 20;
@@ -1748,21 +1748,21 @@ namespace NotEnoughAV1Encodes
             };
 
             // Preset
-            settings += quality +" -encMode " + SliderEncoderPreset.Value;
+            settings += quality + " -encMode " + SliderEncoderPreset.Value;
 
-            // Advanced Settings
-            if (ToggleSwitchAdvancedSettings.IsOn == false)
-            {
-                settings += " --keyint " + GenerateKeyFrameInerval();
-
-            }
-            else
-            {
-                settings += " --tile-columns " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
-                            " --tile-rows " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
-                            " --keyint " + TextBoxSVTAV1MaxGOP.Text +                                        // Keyframe Interval
-                            " --lookahead " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
-            }
+//            // Advanced Settings
+//            if (ToggleSwitchAdvancedSettings.IsOn == false)
+//            {
+//                settings += " --keyint " + GenerateKeyFrameInerval();
+//
+//            }
+//            else
+//            {
+//                settings += " --tile-columns " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
+//                            " --tile-rows " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
+//                            " --keyint " + TextBoxSVTAV1MaxGOP.Text +                                        // Keyframe Interval
+//                            " --lookahead " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
+//            }
 
             return settings;
         }
