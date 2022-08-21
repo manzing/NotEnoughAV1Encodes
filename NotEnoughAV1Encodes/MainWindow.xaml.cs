@@ -1750,19 +1750,18 @@ namespace NotEnoughAV1Encodes
             // Preset
             settings += quality + " -encMode " + SliderEncoderPreset.Value;
 
-//            // Advanced Settings
-//            if (ToggleSwitchAdvancedSettings.IsOn == false)
-//            {
-//                settings += " --keyint " + GenerateKeyFrameInerval();
-//
-//            }
-//            else
-//            {
-//                settings += " --tile-columns " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
-//                            " --tile-rows " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
-//                            " --keyint " + TextBoxSVTAV1MaxGOP.Text +                                        // Keyframe Interval
-//                            " --lookahead " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
-//            }
+            // Advanced Settings
+            if (ToggleSwitchAdvancedSettings.IsOn == false)
+            {
+               settings += " -irefresh-type 0 ";
+            }
+            else
+            {
+                settings += " -tile_col_cnt " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
+                            " -tile_row_cnt " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
+                                                                 // Keyframe Interval
+                            " -lad " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
+            }
 
             return settings;
         }
