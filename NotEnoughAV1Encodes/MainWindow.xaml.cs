@@ -773,7 +773,7 @@ namespace NotEnoughAV1Encodes
                     SliderEncoderPreset.Maximum = 12;
                     SliderEncoderPreset.Value = 7;
                     SliderQuality.Maximum = 51;
-                    SliderQuality.Value = 18;
+                    SliderQuality.Value = 20;
                     CheckBoxTwoPassEncoding.IsEnabled = false;
                     CheckBoxTwoPassEncoding.IsOn = false;
                     CheckBoxRealTimeMode.IsOn = false;
@@ -1748,7 +1748,7 @@ namespace NotEnoughAV1Encodes
             };
 
             // Preset
-            settings += quality +" --preset " + SliderEncoderPreset.Value;
+            settings += quality +" -encMode " + SliderEncoderPreset.Value;
 
             // Advanced Settings
             if (ToggleSwitchAdvancedSettings.IsOn == false)
