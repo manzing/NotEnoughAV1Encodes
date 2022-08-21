@@ -1736,7 +1736,7 @@ namespace NotEnoughAV1Encodes
 		
 		private string GenerateSvtHevcCommand()
         {
-            string settings = "-nostdin -f yuv4mpegpipe - | " +
+            string settings = "-f yuv4mpegpipe - | " +
                               "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
 
             // Quality / Bitrate Selection
@@ -1751,11 +1751,15 @@ namespace NotEnoughAV1Encodes
             settings += quality + " -encMode " + SliderEncoderPreset.Value;
 
             // Advanced Settings
-                        {
-               settings += " -irefresh-type 0 ";
-               settings += " -tile_col_cnt " + ComboBoxSVTHEVCTileColumns.Text +                            // Tile Columns
+             if (ToggleSwitchAdvancedSettings.IsOn == false)
+            {
+                settings += " -irefresh-type 0 ";
+
+            }
+            else
+            {
+                settings += " -tile_col_cnt " + ComboBoxSVTHEVCTileColumns.Text +                            // Tile Columns
                             " -tile_row_cnt " + ComboBoxSVTHEVCTileRows.Text +                                  // Tile Rows
-                                                                 // Keyframe Interval
                             " -lad " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
             }
 

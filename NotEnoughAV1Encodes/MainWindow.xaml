@@ -609,7 +609,8 @@
                             <Label x:Name="LabelSVTHEVCTileColumns" Content="Tile Columns:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="17" />
                             <Label x:Name="LabelSVTHEVCTileRows" Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="51" />
                             <ComboBox x:Name="ComboBoxSVTHEVCTileColumns" SelectedIndex="{Binding SvtHEVCTileColumns}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="17" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
-                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="0" />
+								<ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                                 <ComboBoxItem Content="3" />
                                 <ComboBoxItem Content="4" />
@@ -617,7 +618,8 @@
                                 <ComboBoxItem Content="6" />
                             </ComboBox>
                             <ComboBox x:Name="ComboBoxSVTHEVCTileRows" SelectedIndex="{Binding SvtHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="51" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
-                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="0" />
+								<ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                                 <ComboBoxItem Content="3" />
                                 <ComboBoxItem Content="4" />
