@@ -113,7 +113,7 @@ namespace NotEnoughAV1Encodes.Video
                                     if (queueElement.EncodingMethod is 7) { passesSettings = " --passes 1 --output "; }
                                     ChunkOutput = passesSettings + "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".ivf") + "\"";
                                 }
-                                if (queueElement.EncodingMethod is 9 or 10)
+                                if (queueElement.EncodingMethod is 9 or 10 or 11)
                                 {
                                     ChunkOutput = "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".mp4") + "\"";
                                 }

@@ -1357,6 +1357,7 @@ namespace NotEnoughAV1Encodes
                 7 => GenerateSvtAV1Command(),
                 9 => GenerateHEVCFFmpegCommand(),
                 10 => GenerateAVCFFmpegCommand(),
+				11 => GenerateSvtHevcCommand(),
                 _ => ""
             };
 
@@ -1717,7 +1718,39 @@ namespace NotEnoughAV1Encodes
 
             return settings;
         }
+		
+		private string GenerateSvtHevcCommand()
+        {
+            string settings = "-nostdin -f yuv4mpegpipe - | " +
+                              "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
 
+            // Quality / Bitrate Selection
+            string quality = ComboBoxQualityMode.SelectedIndex switch
+            {
+                0 => " -rc 0 -q " + SliderQuality.Value,
+                2 => " -rc 1 -tbr " + TextBoxAVGBitrate.Text,
+                _ => ""
+            };
+
+            // Preset
+            settings += quality +" --preset " + SliderEncoderPreset.Value;
+
+            // Advanced Settings
+            if (ToggleSwitchAdvancedSettings.IsOn == false)
+            {
+                settings += " --keyint " + GenerateKeyFrameInerval();
+
+            }
+            else
+            {
+                settings += " --tile-columns " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
+                            " --tile-rows " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
+                            " --keyint " + TextBoxSVTAV1MaxGOP.Text +                                        // Keyframe Interval
+                            " --lookahead " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
+            }
+
+            return settings;
+        }
         private string GenerateMPEGEncoderSpeed()
         {
             return SliderEncoderPreset.Value switch
