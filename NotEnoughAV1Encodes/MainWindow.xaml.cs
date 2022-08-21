@@ -1736,7 +1736,7 @@ namespace NotEnoughAV1Encodes
 		
 		private string GenerateSvtHevcCommand()
         {
-            string settings = "-f yuv4mpegpipe - | " +
+            string settings = " -nostdin -f rawvideo - | " +
                               "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
 
             // Quality / Bitrate Selection
