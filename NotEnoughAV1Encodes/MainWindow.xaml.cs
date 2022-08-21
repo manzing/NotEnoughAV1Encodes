@@ -1684,7 +1684,7 @@ namespace NotEnoughAV1Encodes
 
         private string GenerateHEVCFFmpegCommand()
         {
-            string settings = "-c:v libsvthevc";
+            string settings = "-c:v libx265";
 
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
