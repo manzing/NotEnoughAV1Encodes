@@ -1751,16 +1751,12 @@ namespace NotEnoughAV1Encodes
             settings += quality + " -encMode " + SliderEncoderPreset.Value;
 
             // Advanced Settings
-            if (ToggleSwitchAdvancedSettings.IsOn == false)
-            {
+                        {
                settings += " -irefresh-type 0 ";
-            }
-            else
-            {
-                settings += " -tile_col_cnt " + ComboBoxSVTAV1TileColumns.Text +                            // Tile Columns
-                            " -tile_row_cnt " + ComboBoxSVTAV1TileRows.Text +                                  // Tile Rows
+               settings += " -tile_col_cnt " + ComboBoxSVTHEVCTileColumns.Text +                            // Tile Columns
+                            " -tile_row_cnt " + ComboBoxSVTHEVCTileRows.Text +                                  // Tile Rows
                                                                  // Keyframe Interval
-                            " -lad " + TextBoxSVTAV1Lookahead.Text;                                   // Lookahead
+                            " -lad " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
             }
 
             return settings;
