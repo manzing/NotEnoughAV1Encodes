@@ -221,7 +221,7 @@
     <value>Paramètres HDR</value>
   </data>
   <data name="LabelAccentTheme" xml:space="preserve">
-    <value>Couleur secondaire:</value>
+    <value>Couleur déco</value>
   </data>
   <data name="LabelAddToQueue" xml:space="preserve">
     <value>Ajouter à la file</value>
@@ -503,6 +503,6 @@
     <value>Eteindre le PC à la fin</value>
   </data>
   <data name="ToggleSwitchUsePresetBitDepth" xml:space="preserve">
-    <value>Utiliser la profondeur de couleur du réglage ?</value>
+    <value>Utiliser couleurs (bits) du réglage?</value>
   </data>
 </root>
