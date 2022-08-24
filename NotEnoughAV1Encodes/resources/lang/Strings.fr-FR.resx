@@ -299,10 +299,10 @@
     <value>Encodeur</value>
   </data>
   <data name="LabelFramerate" xml:space="preserve">
-    <value>Framerate</value>
+    <value>img/sec</value>
   </data>
   <data name="LabelHeight" xml:space="preserve">
-    <value>Hauteur</value>
+    <value>Hauteur:</value>
   </data>
   <data name="LabelIcons" xml:space="preserve">
     <value>Icones</value>
@@ -497,7 +497,7 @@
     <value>Journaux</value>
   </data>
   <data name="ToggleSwitchOverrideWorkerCount" xml:space="preserve">
-    <value>Autoriser + process</value>
+    <value>Autoriser process +</value>
   </data>
   <data name="ToggleSwitchShutdown" xml:space="preserve">
     <value>Eteindre le PC à la fin</value>
