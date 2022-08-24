@@ -245,7 +245,7 @@
     <value>Bitrate (kbps):</value>
   </data>
   <data name="LabelBitrateAvg" xml:space="preserve">
-    <value>Bitrate ( Ø ):</value>
+    <value>Bitrate moyen:</value>
   </data>
   <data name="LabelBitrateMax" xml:space="preserve">
     <value>Bitrate (max):</value>
@@ -305,7 +305,7 @@
     <value>Hauteur:</value>
   </data>
   <data name="LabelIcons" xml:space="preserve">
-    <value>Icones</value>
+    <value>Icones:</value>
   </data>
   <data name="LabelLanguage" xml:space="preserve">
     <value>Langue</value>
