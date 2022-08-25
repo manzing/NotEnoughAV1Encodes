@@ -606,29 +606,21 @@
                                     </Style.Triggers>
                                 </Style>
                             </Canvas.Style>
-                            <Label x:Name="LabelSVTHEVCTileColumns" Content="Tile Columns:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="17" />
-                            <Label x:Name="LabelSVTHEVCTileRows" Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="51" />
-                            <ComboBox x:Name="ComboBoxSVTHEVCTileColumns" SelectedIndex="{Binding SvtHEVCTileColumns}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="17" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                            <Label x:Name="LabelSVTHEVCSceneDetection" Content="Scene detection:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="17" />
+                            <Label x:Name="LabelSSVTHEVCTune" Content="Tune:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="51" />
+                            <ComboBox x:Name="ComboBoxSVTHEVCSceneDetection" SelectedIndex="{Binding SVTHEVCSceneDetection}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="17" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
                                 <ComboBoxItem Content="0" />
 								<ComboBoxItem Content="1" />
-                                <ComboBoxItem Content="2" />
-                                <ComboBoxItem Content="3" />
-                                <ComboBoxItem Content="4" />
-                                <ComboBoxItem Content="5" />
-                                <ComboBoxItem Content="6" />
                             </ComboBox>
-                            <ComboBox x:Name="ComboBoxSVTHEVCTileRows" SelectedIndex="{Binding SvtHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="51" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                            <ComboBox x:Name="ComboBoxSVTHEVCTune" SelectedIndex="{Binding SVTHEVCTune}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="51" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
                                 <ComboBoxItem Content="0" />
 								<ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
-                                <ComboBoxItem Content="3" />
-                                <ComboBoxItem Content="4" />
-                                <ComboBoxItem Content="5" />
-                                <ComboBoxItem Content="6" />
+
                             </ComboBox>
                             <Label x:Name="LabelSVTHEVCMaxGOP"  Content="Max GOP Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="85" />
                             <TextBox x:Name="TextBoxSVTHEVCMaxGOP" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{Binding SvtHEVCKeyInt}" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="85"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
-                            <Label x:Name="LabelSVTHEVCLookahead"  Content="Lookahead:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="119" />
+                            <Label x:Name="LabelSVTHEVCLookahead"  Content="Lookahead (-1 -> 256):" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="119" />
                             <TextBox x:Name="TextBoxSVTHEVCLookahead" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{Binding SvtHEVCLookahead}" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="119"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                         </Canvas>
                         <Canvas HorizontalAlignment="Left" Height="237" VerticalAlignment="Top" Width="1025" Margin="5,6,0,0">

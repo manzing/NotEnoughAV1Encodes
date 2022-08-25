@@ -770,10 +770,10 @@ namespace NotEnoughAV1Encodes
                     //SVT-HEVC
                     TextBoxMaxBitrate.Visibility = Visibility.Collapsed;
                     TextBoxMinBitrate.Visibility = Visibility.Collapsed;
-                    SliderEncoderPreset.Maximum = 11;
-                    SliderEncoderPreset.Value = 7;
+                    SliderEncoderPreset.Maximum = 12;
+                    SliderEncoderPreset.Value = 9;
                     SliderQuality.Maximum = 51;
-                    SliderQuality.Value = 20;
+                    SliderQuality.Value = 32;
                     CheckBoxTwoPassEncoding.IsEnabled = false;
                     CheckBoxTwoPassEncoding.IsOn = false;
                     CheckBoxRealTimeMode.IsOn = false;
@@ -1736,31 +1736,30 @@ namespace NotEnoughAV1Encodes
 		
 		private string GenerateSvtHevcCommand()
         {
-            string settings = " -nostdin -f rawvideo - | " +
-                              "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
-
+            string settings = "-c:v libsvt_hevc";
+                              
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
-                0 => " -rc 0 -q " + SliderQuality.Value,
-                2 => " -rc 1 -tbr " + TextBoxAVGBitrate.Text,
+                0 => " -rc 0 -qp " + SliderQuality.Value,
+                2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""
             };
 
             // Preset
-            settings += quality + " -encMode " + SliderEncoderPreset.Value;
+            settings += quality + " -preset " + SliderEncoderPreset.Value;
 
             // Advanced Settings
              if (ToggleSwitchAdvancedSettings.IsOn == false)
             {
-                settings += " -irefresh-type 0 ";
+                settings += " -tune sq ";
 
             }
             else
             {
-                settings += " -tile_col_cnt " + ComboBoxSVTHEVCTileColumns.Text +                            // Tile Columns
-                            " -tile_row_cnt " + ComboBoxSVTHEVCTileRows.Text +                                  // Tile Rows
-                            " -lad " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
+                settings += " -sc_detection " + ComboBoxSVTHEVCSceneDetection.Text +                            // Scene detection
+                            " -tune " + ComboBoxSVTHEVCTune.Text +                                  // Tune
+                            " -la_depth " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
             }
 
             return settings;
