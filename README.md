@@ -1,5 +1,16 @@
 # NotEnoughAV1Encodes
 
+
+---
+
+
+## NOTICE: This fork is just an attempt to add SVT-HEVC to NEAV1E.
+Currently, it works only through FFmpeg and need a FFmpeg version compiled with SVT-HEVC (replace the original in NEAV1E apps folder)
+
+
+---
+
+
 #### NEAV1E is a GUI for AV1 encoders - aomenc, rav1e, svt-av1 & vp9. 
 
 A tool to make encoding faster and easier for AV1 encoders.
@@ -17,9 +28,9 @@ A tool to make encoding faster and easier for AV1 encoders.
 
 ## ![alt text](https://i.imgur.com/Ql4lP4E.png) Releases [![Build status](https://ci.appveyor.com/api/projects/status/f3wd2kr5i8eofj88/branch/master?svg=true)](https://ci.appveyor.com/project/Alkl/notenoughav1encodes/branch/master)
 
-#### Stable Builds: [Releases](https://github.com/Alkl58/NotEnoughAV1Encodes/releases)
+#### Stable Builds: [Releases] No stable release yet
 
-#### Testing Builds: [AppVeyor](https://ci.appveyor.com/project/Alkl/notenoughav1encodes/branch/master/artifacts)
+#### Testing Builds: [AppVeyor](https://ci.appveyor.com/project/manzing/notenoughav1encodes/branch/SVT-HEVC-FFmpeg-Support/artifacts)
 
 ## 🐧 Linux (Wine)
 NEAV1E is written in .NET Core, which is in theory compatible with other platforms.
