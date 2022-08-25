@@ -1752,7 +1752,7 @@ namespace NotEnoughAV1Encodes
             // Advanced Settings
              if (ToggleSwitchAdvancedSettings.IsOn == false)
             {
-                settings += " -tune sq ";
+                settings += " -tune 1 ";
 
             }
             else
