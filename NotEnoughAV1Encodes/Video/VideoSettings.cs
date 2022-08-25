@@ -95,5 +95,11 @@
         public int Vp9TuneContent { get; set; }
         public int Vp9Tune { get; set; }
         public string Vp9MaxKf { get; set; } = "240";
+		
+		// Advanced SVT-HEVC Settings
+        public int SVTHEVCSceneDetection { get; set; } = 0;
+        public int SVTHEVCTune { get; set; } = 1;
+        // public string SvtAv1KeyInt { get; set; } = "-1";
+        public string SvtHEVCLookahead { get; set; } = "-1";
     }
 }

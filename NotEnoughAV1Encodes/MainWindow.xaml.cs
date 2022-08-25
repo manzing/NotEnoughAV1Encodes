@@ -764,6 +764,21 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.IsOn = false;
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
                 }
+				
+				else if (ComboBoxVideoEncoder.SelectedIndex is 11)
+                {
+                    //SVT-HEVC
+                    TextBoxMaxBitrate.Visibility = Visibility.Collapsed;
+                    TextBoxMinBitrate.Visibility = Visibility.Collapsed;
+                    SliderEncoderPreset.Maximum = 12;
+                    SliderEncoderPreset.Value = 9;
+                    SliderQuality.Maximum = 51;
+                    SliderQuality.Value = 32;
+                    CheckBoxTwoPassEncoding.IsEnabled = false;
+                    CheckBoxTwoPassEncoding.IsOn = false;
+                    CheckBoxRealTimeMode.IsOn = false;
+                    CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
+                }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
                 {
                     if (ComboBoxQualityMode.SelectedIndex == 2)
@@ -1357,6 +1372,7 @@ namespace NotEnoughAV1Encodes
                 7 => GenerateSvtAV1Command(),
                 9 => GenerateHEVCFFmpegCommand(),
                 10 => GenerateAVCFFmpegCommand(),
+				11 => GenerateSvtHevcCommand(),
                 _ => ""
             };
 
@@ -1717,7 +1733,37 @@ namespace NotEnoughAV1Encodes
 
             return settings;
         }
+		
+		private string GenerateSvtHevcCommand()
+        {
+            string settings = "-c:v libsvt_hevc";
+                              
+            // Quality / Bitrate Selection
+            string quality = ComboBoxQualityMode.SelectedIndex switch
+            {
+                0 => " -rc 0 -qp " + SliderQuality.Value,
+                2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
+                _ => ""
+            };
 
+            // Preset
+            settings += quality + " -preset " + SliderEncoderPreset.Value;
+
+            // Advanced Settings
+             if (ToggleSwitchAdvancedSettings.IsOn == false)
+            {
+                settings += " -tune 1 ";
+
+            }
+            else
+            {
+                settings += " -sc_detection " + ComboBoxSVTHEVCSceneDetection.Text +                            // Scene detection
+                            " -tune " + ComboBoxSVTHEVCTune.Text +                                  // Tune
+                            " -la_depth " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
+            }
+
+            return settings;
+        }
         private string GenerateMPEGEncoderSpeed()
         {
             return SliderEncoderPreset.Value switch

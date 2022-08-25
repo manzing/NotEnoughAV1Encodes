@@ -111,10 +111,14 @@ namespace NotEnoughAV1Encodes.Video
                                     if (queueElement.EncodingMethod is 5) { passesSettings = " --passes=1 --output="; }
                                     if (queueElement.EncodingMethod is 6) { passesSettings = " --output "; }
                                     if (queueElement.EncodingMethod is 7) { passesSettings = " --passes 1 --output "; }
-                                    ChunkOutput = passesSettings + "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".ivf") + "\"";
+									ChunkOutput = passesSettings + "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".ivf") + "\"";
                                 }
                                 if (queueElement.EncodingMethod is 9 or 10)
                                 {
+                                    ChunkOutput = "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".mp4") + "\"";
+                                }
+								if (queueElement.EncodingMethod is 11) 
+								{
                                     ChunkOutput = "\"" + Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video", index.ToString("D6") + ".mp4") + "\"";
                                 }
                             }
