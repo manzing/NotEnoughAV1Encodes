@@ -1736,18 +1736,19 @@ namespace NotEnoughAV1Encodes
 		
 		private string GenerateSvtHevcCommand()
         {
-            string settings = "-c:v libsvt_hevc";
+            string settings ="-nostdin -f yuv4mpegpipe - | " +
+                              "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
                               
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
-                0 => " -rc 0 -qp " + SliderQuality.Value,
-                2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
+                0 => " -rc 0 -q " + SliderQuality.Value,
+                2 => " -rc 0 -tbr " + TextBoxAVGBitrate.Text,
                 _ => ""
             };
 
             // Preset
-            settings += quality + " -preset " + SliderEncoderPreset.Value;
+            settings += quality + " -encMode " + SliderEncoderPreset.Value;
 
             // Advanced Settings
              if (ToggleSwitchAdvancedSettings.IsOn == false)
@@ -1757,9 +1758,9 @@ namespace NotEnoughAV1Encodes
             }
             else
             {
-                settings += " -sc_detection " + ComboBoxSVTHEVCSceneDetection.Text +                            // Scene detection
-                            " -tune " + ComboBoxSVTHEVCTune.Text +                                  // Tune
-                            " -la_depth " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
+                settings += " -scd " + ComboBoxSVTHEVCSceneDetection.Text +                            // Scene detection
+             //               " -tune " + ComboBoxSVTHEVCTune.Text +                                  // Tune
+                            " -lad " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
             }
 
             return settings;
