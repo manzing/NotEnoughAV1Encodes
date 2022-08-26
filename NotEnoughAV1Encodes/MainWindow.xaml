@@ -646,7 +646,7 @@
                                 <ComboBoxItem Content="20" />
                             </ComboBox>
                             <Label x:Name="LabelSVTHEVCTileRows"  Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="283" Canvas.Top="59" />
-                            <ComboBox x:Name="ComboBoxSVCHEVCTileRows" SelectedIndex="{Binding SVCHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="59" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                            <ComboBox x:Name="ComboBoxSVCHEVCTileRows" SelectedIndex="{Binding SVTHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="59" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
                                 <ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                                 <ComboBoxItem Content="3" />
