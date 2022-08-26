@@ -614,7 +614,7 @@
 								<ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                             </ComboBox>
-                            <Label x:Name="LabelSVTHEVCBLMODE"  Content="Max GOP Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="85" />
+                            <Label x:Name="LabelSVTHEVCBLMODE"  Content="Base Layer Switch Mode:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="85" />
                             <ComboBox x:Name="ComboBoxSVTHEVCBLMODE" SelectedIndex="{Binding SVTHEVCBLMODE}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="85"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
 								<ComboBoxItem Content="0" />
 								<ComboBoxItem Content="1" />
