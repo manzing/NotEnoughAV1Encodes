@@ -926,6 +926,10 @@ namespace NotEnoughAV1Encodes
 				{
                     CheckBoxVBR.IsChecked = true;
                 }
+				else
+				{
+                    CheckBoxVBR.IsChecked = false;
+                }	
             }
         }
 
