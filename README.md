@@ -28,7 +28,7 @@ A tool to make encoding faster and easier for AV1 encoders.
 3. When finished, it will merge the encoded files to a single video file.
 
 
-## ![alt text](https://i.imgur.com/Ql4lP4E.png) Releases [![Build status](https://ci.appveyor.com/api/projects/status/f3wd2kr5i8eofj88/branch/master?svg=true)](https://ci.appveyor.com/project/Alkl/notenoughav1encodes/branch/master)
+## ![alt text](https://i.imgur.com/Ql4lP4E.png) Releases [![Build status](https://ci.appveyor.com/api/projects/status/f3wd2kr5i8eofj88/branch/master?svg=true)](https://ci.appveyor.com/project/manizng/notenoughav1encodes/branch/master)
 
 #### Stable Builds: [Releases] No stable release yet
 
