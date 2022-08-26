@@ -7,8 +7,9 @@
 ## NOTICE: This fork is just an attempt to add SVT-HEVC to NEAV1E.
 Currently, it works only through FFmpeg and need a FFmpeg version compiled with SVT-HEVC (replace the original in NEAV1E apps folder)
 
-#### Known issue: if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
-
+#### Known issue: 
+- if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
+- VBR mode is functionnal using "Constrained bitrate" quality but produced extremely poor quality videos, it does not respect provided average bitrate. Do not use.
 ---
 
 
@@ -27,7 +28,7 @@ A tool to make encoding faster and easier for AV1 encoders.
 3. When finished, it will merge the encoded files to a single video file.
 
 
-## ![alt text](https://i.imgur.com/Ql4lP4E.png) Releases [![Build status](https://ci.appveyor.com/api/projects/status/f3wd2kr5i8eofj88/branch/master?svg=true)](https://ci.appveyor.com/project/Alkl/notenoughav1encodes/branch/master)
+## ![alt text](https://i.imgur.com/Ql4lP4E.png) Releases [![Build status](https://ci.appveyor.com/api/projects/status/f3wd2kr5i8eofj88/branch/master?svg=true)](https://ci.appveyor.com/project/manzing/notenoughav1encodes/branch/master)
 
 #### Stable Builds: [Releases] No stable release yet
 
