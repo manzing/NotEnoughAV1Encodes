@@ -622,8 +622,8 @@
                             <Label x:Name="LabelSVTHEVCLookahead"  Content="Lookahead (-1 -> 256):" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="119" />
                             <TextBox x:Name="TextBoxSVTHEVCLookahead" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{Binding SvtHEVCLookahead}" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="119"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                             
-							<Label x:Name="LabelSVTHEVCTileColumns"  Content="Tile Columns:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="283" Canvas.Top="127" />
-                             <ComboBox x:Name="ComboBoxSVTHEVCTileColumns" SelectedIndex="{Binding SVTHEVCTileColumns}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="127" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+							<Label x:Name="LabelSVTHEVCTileColumns"  Content="Tile Columns:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="320" Canvas.Top="51" />
+                             <ComboBox x:Name="ComboBoxSVTHEVCTileColumns" SelectedIndex="{Binding SVTHEVCTileColumns}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="51" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
                                 <ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                                 <ComboBoxItem Content="3" />
@@ -645,8 +645,8 @@
                                 <ComboBoxItem Content="19" />
                                 <ComboBoxItem Content="20" />
                             </ComboBox>
-                            <Label x:Name="LabelSVTHEVCTileRows"  Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="283" Canvas.Top="59" />
-                            <ComboBox x:Name="ComboBoxSVTHEVCTileRows" SelectedIndex="{Binding SVTHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="59" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                            <Label x:Name="LabelSVTHEVCTileRows"  Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="320" Canvas.Top="17" />
+                            <ComboBox x:Name="ComboBoxSVTHEVCTileRows" SelectedIndex="{Binding SVTHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="17" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
                                 <ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
                                 <ComboBoxItem Content="3" />
