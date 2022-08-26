@@ -7,8 +7,9 @@
 ## NOTICE: This fork is just an attempt to add SVT-HEVC to NEAV1E.
 Currently, it works only through FFmpeg and need a FFmpeg version compiled with SVT-HEVC (replace the original in NEAV1E apps folder)
 
-#### Known issue: if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
-
+#### Known issue: 
+- if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
+- VBR mode is functionnal using "Constrained bitrate" quality but produced extremely poor quality videos, it does not respect provided average bitrate. Do not use.
 ---
 
 
