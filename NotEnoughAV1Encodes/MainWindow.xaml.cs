@@ -791,11 +791,7 @@ namespace NotEnoughAV1Encodes
 					CheckBoxVBR.Visibility = Visibility.Visible;
 					CheckBoxVBR.IsEnabled = false;
 					CheckBoxVBR.IsChecked = false;
-					if (ComboBoxQualityMode.SelectedIndex == 3)
-					{
-						CheckBoxVBR.IsChecked = true;
-					}  
-					
+										
 					
                 }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
@@ -805,6 +801,11 @@ namespace NotEnoughAV1Encodes
                         CheckBoxTwoPassEncoding.IsEnabled = true;
                     }
                 }
+				if (ComboBoxVideoEncoder.SelectedIndex is 11)
+					if (ComboBoxQualityMode.SelectedIndex == 3) 
+					{
+                        CheckBoxVBR.IsChecked = true;
+                    }
             }
         }
 
@@ -1767,7 +1768,6 @@ namespace NotEnoughAV1Encodes
 				3 => " -rc 1 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""
             };
-			
 			
 			
 			 // Preset
