@@ -831,6 +831,7 @@ namespace NotEnoughAV1Encodes
             }
         }
 
+		
         private void SliderEncoderPreset_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             // Shows / Hides Real Time Mode CheckBox
@@ -920,6 +921,10 @@ namespace NotEnoughAV1Encodes
                 else if(ComboBoxVideoEncoder.SelectedIndex is 10 && ComboBoxQualityMode.SelectedIndex != 2)
                 {
                     CheckBoxTwoPassEncoding.IsEnabled = false;
+                }
+				if (ComboBoxVideoEncoder.SelectedIndex is 11 && ComboBoxQualityMode.SelectedIndex == 3) 
+				{
+                    CheckBoxVBR.IsChecked = true;
                 }
             }
         }
