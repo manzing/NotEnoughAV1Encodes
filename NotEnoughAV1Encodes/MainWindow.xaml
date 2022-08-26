@@ -332,6 +332,7 @@
                             </ComboBox>
                             <CheckBox x:Name="CheckBoxVideoVFR" Content="VFR" HorizontalAlignment="Left" Margin="296,141,0,0" VerticalAlignment="Top"/>
                             <CheckBox x:Name="CheckBoxVideoHDR" Content="HDR" HorizontalAlignment="Left" Margin="296,101,0,0" VerticalAlignment="Top"/>
+							
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBoxOptimization" Header="{lex:Loc}" Margin="0,10,10,0" Height="210" VerticalAlignment="Top" mah:ControlsHelper.ContentCharacterCasing="Normal" HorizontalAlignment="Right" Width="410">
@@ -342,7 +343,7 @@
                             <Label x:Name="LabelSpeedValue" Content="{Binding ElementName=SliderEncoderPreset, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="337,16,0,0" VerticalAlignment="Top"/>
                             <mah:ToggleSwitch x:Name="ToggleSwitchAdvancedSettings" Content="{lex:Loc}" IsOn="{Binding AdvancedSettings}" Height="36" Margin="19,129,0,0" VerticalAlignment="Top" Width="224"/>
                             <mah:ToggleSwitch x:Name="CheckBoxRealTimeMode" Content="{lex:Loc}" IsOn="{Binding AomencRTMode}" Margin="196,66,0,0" VerticalAlignment="Top" Toggled="CheckBoxRealTimeMode_Toggled" Width="169"/>
-
+							
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBoxQuality" Header="{lex:Loc}" Margin="10,237,10,10" mah:ControlsHelper.ContentCharacterCasing="Normal">
@@ -363,6 +364,7 @@
                             <TextBox x:Name="TextBoxMinBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,142,0,0" Text="{Binding MinBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxAVGBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,175,0,0" Text="{Binding AvgBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxMaxBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,208,0,0" Text="{Binding MaxBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
+							<CheckBox x:Name="CheckBoxVBR" Content="VBR" HorizontalAlignment="Left" Margin="280,10,0,0" VerticalAlignment="Top"/>
 
                         </Grid>
                     </GroupBox>
