@@ -791,6 +791,10 @@ namespace NotEnoughAV1Encodes
 					CheckBoxVBR.Visibility = Visibility.Visible;
 					CheckBoxVBR.IsEnabled = false;
 					CheckBoxVBR.IsChecked = false;
+					if (ComboBoxQualityMode.SelectedIndex is 3)
+					{
+						CheckBoxVBR.IsChecked = true;
+					}  
 					
 					
                 }
@@ -1764,10 +1768,7 @@ namespace NotEnoughAV1Encodes
                 _ => ""
             };
 			
-			if (ComboBoxQualityMode.SelectedIndex is 3)
-					{
-						CheckBoxVBR.IsChecked = true;
-					}   
+			
 			
 			 // Preset
             settings += quality + " -preset " + SliderEncoderPreset.Value;
