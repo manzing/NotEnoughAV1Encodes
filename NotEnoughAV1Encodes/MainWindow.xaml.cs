@@ -791,7 +791,7 @@ namespace NotEnoughAV1Encodes
 					CheckBoxVBR.Visibility = Visibility.Visible;
 					CheckBoxVBR.IsEnabled = false;
 					CheckBoxVBR.IsChecked = false;
-					if (ComboBoxQualityMode.SelectedIndex is 3)
+					if (ComboBoxQualityMode.SelectedIndex == 3)
 					{
 						CheckBoxVBR.IsChecked = true;
 					}  
