@@ -99,7 +99,9 @@
 		// Advanced SVT-HEVC Settings
         public int SVTHEVCSceneDetection { get; set; } = 0;
         public int SVTHEVCTune { get; set; } = 1;
-        // public string SvtAv1KeyInt { get; set; } = "-1";
+        public int SVTHEVCBLMODE { get; set; } = 0;
         public string SvtHEVCLookahead { get; set; } = "-1";
+		public int SVTHEVCTileColumns { get; set; } = 1;
+        public int SVTHEVCTileRows { get; set; } = 1;
     }
 }

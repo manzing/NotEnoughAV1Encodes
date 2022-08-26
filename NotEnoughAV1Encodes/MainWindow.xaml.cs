@@ -1759,6 +1759,9 @@ namespace NotEnoughAV1Encodes
             {
                 settings += " -sc_detection " + ComboBoxSVTHEVCSceneDetection.Text +                            // Scene detection
                             " -tune " + ComboBoxSVTHEVCTune.Text +                                  // Tune
+							" -bl_mode " + ComboBoxSVTHEVCBLMODE.Text +                                  // Base layer switch mode
+							" -tile_col_cnt " + ComboBoxSVTHEVCTileColumns.Text +                                  // tile count in the column
+							" -tile_row_cnt " + ComboBoxSVTHEVCTileRows.Text +                                  // tile count in the row
                             " -la_depth " + TextBoxSVTHEVCLookahead.Text;                                   // Lookahead
             }
 
