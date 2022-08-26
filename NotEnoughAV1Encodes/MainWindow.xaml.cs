@@ -857,7 +857,7 @@ namespace NotEnoughAV1Encodes
         {
             if (TextBoxAVGBitrate != null)
             {
-                if (ComboBoxVideoEncoder.SelectedIndex is 1 or 2 or 6 or 7 or 9 or 10 or 11)
+                if (ComboBoxVideoEncoder.SelectedIndex is 1 or 2 or 6 or 7 or 9 or 10 )
                 {
                     if (ComboBoxQualityMode.SelectedIndex is 1 or 3)
                     {
