@@ -1752,7 +1752,7 @@ namespace NotEnoughAV1Encodes
         {
             string settings = "-c:v libsvt_hevc";
 			
-			if (CheckBoxVBR.IsChecked = true;)
+			if (CheckBoxVBR.IsChecked == true )
 			{
 				ComboBoxQualityMode.SelectedIndex = 3;
 			}                  
