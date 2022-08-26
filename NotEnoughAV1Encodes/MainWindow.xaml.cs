@@ -789,12 +789,9 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.IsOn = false;
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.Visibility = Visibility.Visible;
-					CheckBoxVBR.IsEnabled = true;
+					CheckBoxVBR.IsEnabled = false;
 					CheckBoxVBR.IsChecked = false;
-					if (CheckBoxVBR.IsChecked == true )
-					{
-						ComboBoxQualityMode.SelectedIndex = 3;
-					}   
+					
 					
                 }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
@@ -1767,6 +1764,10 @@ namespace NotEnoughAV1Encodes
                 _ => ""
             };
 			
+			if (ComboBoxQualityMode.SelectedIndex == 3)
+					{
+						CheckBoxVBR.IsChecked = true;
+					}   
 			
 				
 			 // Preset
