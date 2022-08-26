@@ -1760,13 +1760,10 @@ namespace NotEnoughAV1Encodes
 				3 => " -rc 1 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""
             };
-			try
-			{ if (CheckBoxVBR.IsChecked = true;) 
-				{ ComboBoxQualityMode.SelectedIndex = 3;}
-				catch {}
-			}        
-            
-            // Preset
+			if (CheckBoxVBR.IsChecked = true;)
+			{ComboBoxQualityMode.SelectedIndex = 3;}
+				
+			 // Preset
             settings += quality + " -preset " + SliderEncoderPreset.Value;
 
             // Advanced Settings
