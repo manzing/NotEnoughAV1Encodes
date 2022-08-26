@@ -364,7 +364,7 @@
                             <TextBox x:Name="TextBoxMinBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,142,0,0" Text="{Binding MinBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxAVGBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,175,0,0" Text="{Binding AvgBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxMaxBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,208,0,0" Text="{Binding MaxBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
-							<CheckBox x:Name="CheckBoxVBR" Content="VBR" HorizontalAlignment="Left" Margin="280,15,0,0" VerticalAlignment="Top"/>
+							<CheckBox x:Name="CheckBoxVBR" Content="VBR" HorizontalAlignment="Left" Margin="280,15,0,0" VerticalAlignment="Top" IsChecked="{Binding ElementName=ComboBoxQualityMode.SelectedIndex, Path=IsChecked, UpdateSourceTrigger=PropertyChanged}"/>
 
                         </Grid>
                     </GroupBox>
