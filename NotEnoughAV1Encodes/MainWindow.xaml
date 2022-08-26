@@ -332,6 +332,7 @@
                             </ComboBox>
                             <CheckBox x:Name="CheckBoxVideoVFR" Content="VFR" HorizontalAlignment="Left" Margin="296,141,0,0" VerticalAlignment="Top"/>
                             <CheckBox x:Name="CheckBoxVideoHDR" Content="HDR" HorizontalAlignment="Left" Margin="296,101,0,0" VerticalAlignment="Top"/>
+							
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBoxOptimization" Header="{lex:Loc}" Margin="0,10,10,0" Height="210" VerticalAlignment="Top" mah:ControlsHelper.ContentCharacterCasing="Normal" HorizontalAlignment="Right" Width="410">
@@ -342,7 +343,7 @@
                             <Label x:Name="LabelSpeedValue" Content="{Binding ElementName=SliderEncoderPreset, Path=Value, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="337,16,0,0" VerticalAlignment="Top"/>
                             <mah:ToggleSwitch x:Name="ToggleSwitchAdvancedSettings" Content="{lex:Loc}" IsOn="{Binding AdvancedSettings}" Height="36" Margin="19,129,0,0" VerticalAlignment="Top" Width="224"/>
                             <mah:ToggleSwitch x:Name="CheckBoxRealTimeMode" Content="{lex:Loc}" IsOn="{Binding AomencRTMode}" Margin="196,66,0,0" VerticalAlignment="Top" Toggled="CheckBoxRealTimeMode_Toggled" Width="169"/>
-
+							
                         </Grid>
                     </GroupBox>
                     <GroupBox x:Name="GroupBoxQuality" Header="{lex:Loc}" Margin="10,237,10,10" mah:ControlsHelper.ContentCharacterCasing="Normal">
@@ -363,6 +364,7 @@
                             <TextBox x:Name="TextBoxMinBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,142,0,0" Text="{Binding MinBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxAVGBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,175,0,0" Text="{Binding AvgBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
                             <TextBox x:Name="TextBoxMaxBitrate" PreviewTextInput="NumberValidationTextBox" Margin="131,208,0,0" Text="{Binding MaxBitrate}" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Width="120"/>
+							<CheckBox x:Name="CheckBoxVBR" Content="VBR" HorizontalAlignment="Left" Margin="280,15,0,0" VerticalAlignment="Top" IsChecked="{Binding ElementName=ComboBoxQualityMode.SelectedIndex, Path=IsChecked, UpdateSourceTrigger=PropertyChanged}"/>
 
                         </Grid>
                     </GroupBox>
@@ -597,9 +599,6 @@
                                 <Style>
                                     <Setter Property="UIElement.Visibility" Value="Collapsed" />
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding SelectedIndex, ElementName=ComboBoxVideoEncoder}" Value="2">
-                                            <Setter Property="UIElement.Visibility" Value="Visible" />
-                                        </DataTrigger>
                                         <DataTrigger Binding="{Binding SelectedIndex, ElementName=ComboBoxVideoEncoder}" Value="11">
                                             <Setter Property="UIElement.Visibility" Value="Visible" />
                                         </DataTrigger>
@@ -616,12 +615,63 @@
                                 <ComboBoxItem Content="0" />
 								<ComboBoxItem Content="1" />
                                 <ComboBoxItem Content="2" />
-
                             </ComboBox>
-                            <Label x:Name="LabelSVTHEVCMaxGOP"  Content="Max GOP Size:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="85" />
-                            <TextBox x:Name="TextBoxSVTHEVCMaxGOP" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{Binding SvtHEVCKeyInt}" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="85"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            <Label x:Name="LabelSVTHEVCBLMODE"  Content="Base Layer Switch Mode:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="85" />
+                            <ComboBox x:Name="ComboBoxSVTHEVCBLMODE" SelectedIndex="{Binding SVTHEVCBLMODE}" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="85"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+								<ComboBoxItem Content="0" />
+								<ComboBoxItem Content="1" />
+							</ComboBox>
                             <Label x:Name="LabelSVTHEVCLookahead"  Content="Lookahead (-1 -> 256):" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="56" Canvas.Top="119" />
                             <TextBox x:Name="TextBoxSVTHEVCLookahead" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="{Binding SvtHEVCLookahead}" VerticalAlignment="Top" Width="90" Canvas.Left="184" Canvas.Top="119"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                            
+							<Label x:Name="LabelSVTHEVCTileColumns"  Content="Tile Columns:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="320" Canvas.Top="51" />
+                             <ComboBox x:Name="ComboBoxSVTHEVCTileColumns" SelectedIndex="{Binding SVTHEVCTileColumns}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="51" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="2" />
+                                <ComboBoxItem Content="3" />
+                                <ComboBoxItem Content="4" />
+                                <ComboBoxItem Content="5" />
+                                <ComboBoxItem Content="6" />
+                                <ComboBoxItem Content="7" />
+                                <ComboBoxItem Content="8" />
+                                <ComboBoxItem Content="9" />
+                                <ComboBoxItem Content="10" />
+                                <ComboBoxItem Content="11" />
+                                <ComboBoxItem Content="12" />
+								<ComboBoxItem Content="13" />
+                                <ComboBoxItem Content="14" />
+                                <ComboBoxItem Content="15" />
+                                <ComboBoxItem Content="16" />
+                                <ComboBoxItem Content="17" />
+                                <ComboBoxItem Content="18" />
+                                <ComboBoxItem Content="19" />
+                                <ComboBoxItem Content="20" />
+                            </ComboBox>
+                            <Label x:Name="LabelSVTHEVCTileRows"  Content="Tile Rows:" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="320" Canvas.Top="17" />
+                            <ComboBox x:Name="ComboBoxSVTHEVCTileRows" SelectedIndex="{Binding SVTHEVCTileRows}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="115" Canvas.Left="426" Canvas.Top="17" Height="29" VerticalContentAlignment="Center" RenderTransformOrigin="0.722,0.448">
+                                <ComboBoxItem Content="1" />
+                                <ComboBoxItem Content="2" />
+                                <ComboBoxItem Content="3" />
+                                <ComboBoxItem Content="4" />
+                                <ComboBoxItem Content="5" />
+                                <ComboBoxItem Content="6" />
+                                <ComboBoxItem Content="7" />
+                                <ComboBoxItem Content="8" />
+                                <ComboBoxItem Content="9" />
+                                <ComboBoxItem Content="10" />
+                                <ComboBoxItem Content="11" />
+                                <ComboBoxItem Content="12" />
+								<ComboBoxItem Content="13" />
+                                <ComboBoxItem Content="14" />
+                                <ComboBoxItem Content="15" />
+                                <ComboBoxItem Content="16" />
+                                <ComboBoxItem Content="17" />
+                                <ComboBoxItem Content="18" />
+                                <ComboBoxItem Content="19" />
+                                <ComboBoxItem Content="20" />
+								<ComboBoxItem Content="21" />
+                                <ComboBoxItem Content="22" />
+                            </ComboBox>
                         </Canvas>
                         <Canvas HorizontalAlignment="Left" Height="237" VerticalAlignment="Top" Width="1025" Margin="5,6,0,0">
                             <Canvas.Style>
