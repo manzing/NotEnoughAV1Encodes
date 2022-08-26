@@ -791,6 +791,10 @@ namespace NotEnoughAV1Encodes
 					CheckBoxVBR.Visibility = Visibility.Visible;
 					CheckBoxVBR.IsEnabled = true;
 					CheckBoxVBR.IsChecked = false;
+					if (CheckBoxVBR.IsChecked == true )
+					{
+						ComboBoxQualityMode.SelectedIndex = 3;
+					}   
 					
                 }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
@@ -1752,14 +1756,12 @@ namespace NotEnoughAV1Encodes
         {
             string settings = "-c:v libsvt_hevc";
 			
-			if (CheckBoxVBR.IsChecked == true )
-			{
-				ComboBoxQualityMode.SelectedIndex = 3;
-			}                  
+			               
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
                 0 => " -rc 0 -qp " + SliderQuality.Value,
+				1 => " -rc 0 -qp " + SliderQuality.Value,
                 2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
 				3 => " -rc 1 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""
