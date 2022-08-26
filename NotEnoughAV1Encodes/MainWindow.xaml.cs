@@ -1764,12 +1764,11 @@ namespace NotEnoughAV1Encodes
                 _ => ""
             };
 			
-			if (ComboBoxQualityMode.SelectedIndex == 3)
+			if (ComboBoxQualityMode.SelectedIndex is 3)
 					{
 						CheckBoxVBR.IsChecked = true;
 					}   
 			
-				
 			 // Preset
             settings += quality + " -preset " + SliderEncoderPreset.Value;
 
