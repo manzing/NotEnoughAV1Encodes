@@ -279,8 +279,8 @@
                         <Grid Background="{Binding ElementName=ListBoxAudioTracks, Path=Background, UpdateSourceTrigger=PropertyChanged}">
                             <Label Content="{lex:Loc LabelEncoder}" HorizontalAlignment="Left" Margin="19,15,0,0" VerticalAlignment="Top" Width="111" />
                             <ComboBox x:Name="ComboBoxVideoEncoder"  HorizontalAlignment="Left" Margin="135,14,0,0" VerticalAlignment="Top" Width="140" Height="28" VerticalContentAlignment="Center" SelectedIndex="{Binding Encoder}" SelectionChanged="ComboBoxVideoEncoder_SelectionChanged">
-                                <ComboBoxItem Content="rav1e (AV1 FFmpeg)"  />
-                                <ComboBoxItem Content="aom (AV1 FFmpeg)" />
+                                <ComboBoxItem Content="aom (AV1 FFmpeg)"  />
+                                <ComboBoxItem Content="rav1e (AV1 FFmpeg)" />
                                 <ComboBoxItem Content="svt-av1 (AV1 FFmpeg)" IsSelected="True" />
                                 <ComboBoxItem Content="vpx-vp9 (VP9 FFmpeg)" />
                                 <Separator />
@@ -290,7 +290,7 @@
                                 <Separator />
                                 <ComboBoxItem Content="x265 (HEVC FFmpeg)" />
                                 <ComboBoxItem Content="x264 (AVC FFmpeg)" />
-								<ComboBoxItem Content="SVT-HEVC (FFmpeg)" />
+				<ComboBoxItem Content="SVT-HEVC (FFmpeg)" />
                             </ComboBox>
                             <Label Content="{lex:Loc LabelBitDepth}" HorizontalAlignment="Left" Margin="19,54,0,0" VerticalAlignment="Top" Width="111" />
                             <ComboBox x:Name="ComboBoxVideoBitDepth" SelectedIndex="{Binding BitDepth}" HorizontalAlignment="Left" Margin="135,52,0,0" VerticalAlignment="Top" Width="70" Height="30" VerticalContentAlignment="Center" SelectionChanged="ComboBoxVideoBitDepth_SelectionChanged">
