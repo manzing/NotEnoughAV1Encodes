@@ -9,7 +9,7 @@ Currently, it works only through FFmpeg and need a FFmpeg version compiled with 
 
 #### Known issue: 
 - if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
-- VBR mode is functionnal using "Constrained bitrate" quality but produced extremely poor quality videos, it does not respect provided average bitrate. Do not use.
+- VBR mode is functionnal using "Constrained quality". You have to set Qmin and Qmax value when using it. Please see SVT-HEVC documentation if you need to know how it works.
 ---
 
 
