@@ -708,6 +708,8 @@ namespace NotEnoughAV1Encodes
                     CheckBoxTwoPassEncoding.IsEnabled = true;
 					CheckBoxVBR.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.IsEnabled = false;
+					TextBoxQmin.Visibility = Visibility.Collapsed;	
+					TextBoxQmax.Visibility = Visibility.Collapsed;
                 }
                 else if (ComboBoxVideoEncoder.SelectedIndex is 1 or 6)
                 {
@@ -725,6 +727,8 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.IsEnabled = false;
+					TextBoxQmin.Visibility = Visibility.Collapsed;	
+					TextBoxQmax.Visibility = Visibility.Collapsed;
                 }
                 else if (ComboBoxVideoEncoder.SelectedIndex is 2 or 7)
                 {
@@ -742,6 +746,8 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.IsEnabled = false;
+					TextBoxQmin.Visibility = Visibility.Collapsed;	
+					TextBoxQmax.Visibility = Visibility.Collapsed;
                 }
                 else if (ComboBoxVideoEncoder.SelectedIndex is 3)
                 {
@@ -757,6 +763,8 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.IsEnabled = false;
+					TextBoxQmin.Visibility = Visibility.Collapsed;	
+					TextBoxQmax.Visibility = Visibility.Collapsed;
                 }
                 else if (ComboBoxVideoEncoder.SelectedIndex is 9 or 10)
                 {
@@ -773,6 +781,8 @@ namespace NotEnoughAV1Encodes
                     CheckBoxRealTimeMode.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.Visibility = Visibility.Collapsed;
 					CheckBoxVBR.IsEnabled = false;
+					TextBoxQmin.Visibility = Visibility.Collapsed;	
+					TextBoxQmax.Visibility = Visibility.Collapsed;					
                 }
 				
 				else if (ComboBoxVideoEncoder.SelectedIndex is 11)
@@ -791,7 +801,8 @@ namespace NotEnoughAV1Encodes
 					CheckBoxVBR.Visibility = Visibility.Visible;
 					CheckBoxVBR.IsEnabled = false;
 					CheckBoxVBR.IsChecked = false;
-										
+					TextBoxQmin.Visibility = Visibility.Visible;	
+					TextBoxQmax.Visibility = Visibility.Visible;	
 					
                 }
                 if (ComboBoxVideoEncoder.SelectedIndex is 10)
@@ -802,10 +813,11 @@ namespace NotEnoughAV1Encodes
                     }
                 }
 				if (ComboBoxVideoEncoder.SelectedIndex is 11)
-					if (ComboBoxQualityMode.SelectedIndex == 3) 
+					if (ComboBoxQualityMode.SelectedIndex == 1) 
 					{
                         CheckBoxVBR.IsChecked = true;
                     }
+					
             }
         }
 
@@ -922,13 +934,18 @@ namespace NotEnoughAV1Encodes
                 {
                     CheckBoxTwoPassEncoding.IsEnabled = false;
                 }
-				if (ComboBoxVideoEncoder.SelectedIndex is 11 && ComboBoxQualityMode.SelectedIndex == 3) 
+				if (ComboBoxVideoEncoder.SelectedIndex is 11 && ComboBoxQualityMode.SelectedIndex == 1) 
 				{
                     CheckBoxVBR.IsChecked = true;
+					TextBoxQmin.IsEnabled = true;
+                    TextBoxQmax.IsEnabled = true;
+					SliderQuality.IsEnabled = false;
                 }
 				else
 				{
                     CheckBoxVBR.IsChecked = false;
+					TextBoxQmin.IsEnabled = false;
+                    TextBoxQmax.IsEnabled = false;
                 }	
             }
         }
@@ -1772,7 +1789,7 @@ namespace NotEnoughAV1Encodes
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
                 0 => " -rc 0 -qp " + SliderQuality.Value,
-				1 => " -rc 0 -qp " + SliderQuality.Value,
+				1 => " -rc 1 -qmin " + TextBoxQmin.Text + " -qmax " + TextBoxQmax.Text,
                 2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
 				3 => " -rc 1 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""
