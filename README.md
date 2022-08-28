@@ -4,8 +4,9 @@
 ---
 
 
-## NOTICE: This fork only add SVT-HEVC to NEAV1E, I don't work on the main project by Alkl58.
+## NOTICE: This fork only add SVT-HEVC to NEAV1E.
 Currently, it works only through FFmpeg and need a FFmpeg version compiled with SVT-HEVC (replace the original in NEAV1E apps folder)
+Please, note that I don't work on the main project by Alkl58
 
 #### Known issue: 
 - if you update FFmpeg using app updater, it will break SVT-HEVC support as the original version does not have builtin libsvt_hevc.
