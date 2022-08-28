@@ -802,7 +802,7 @@ namespace NotEnoughAV1Encodes
                     }
                 }
 				if (ComboBoxVideoEncoder.SelectedIndex is 11)
-					if (ComboBoxQualityMode.SelectedIndex == 3) 
+					if (ComboBoxQualityMode.SelectedIndex == 1) 
 					{
                         CheckBoxVBR.IsChecked = true;
                     }
@@ -922,7 +922,7 @@ namespace NotEnoughAV1Encodes
                 {
                     CheckBoxTwoPassEncoding.IsEnabled = false;
                 }
-				if (ComboBoxVideoEncoder.SelectedIndex is 11 && ComboBoxQualityMode.SelectedIndex == 3) 
+				if (ComboBoxVideoEncoder.SelectedIndex is 11 && ComboBoxQualityMode.SelectedIndex == 1) 
 				{
                     CheckBoxVBR.IsChecked = true;
                 }
@@ -1772,7 +1772,7 @@ namespace NotEnoughAV1Encodes
             string quality = ComboBoxQualityMode.SelectedIndex switch
             {
                 0 => " -rc 0 -qp " + SliderQuality.Value,
-				1 => " -rc 0 -qp " + SliderQuality.Value,
+				1 => " -rc 1 -qmin " + TextBoxQmin.Text + " -qmax " + TextBoxQmax.Text,
                 2 => " -rc 0 -b:v " + TextBoxAVGBitrate.Text,
 				3 => " -rc 1 -b:v " + TextBoxAVGBitrate.Text,
                 _ => ""

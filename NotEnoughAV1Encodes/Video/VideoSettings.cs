@@ -13,6 +13,8 @@
         public string MinBitrate { get; set; } = "500";
         public string MaxBitrate { get; set; } = "1500";
         public string AvgBitrate { get; set; } = "1000";
+		public string Qmin { get; set; } = "10";
+        public string Qmax { get; set; } = "48";
         public bool AdvancedSettings { get; set; }
         public bool CustomSettingsActive { get; set; }
         public string CustomSettings { get; set; }
