@@ -817,11 +817,7 @@ namespace NotEnoughAV1Encodes
 					{
                         CheckBoxVBR.IsChecked = true;
                     }
-				if (ComboBoxVideoEncoder.SelectedIndex is 11)
-					if (ComboBoxQualityMode.SelectedIndex == 1) 
-					{
-                        CheckBoxVBR.IsChecked = true;
-                    }	
+					
             }
         }
 
@@ -943,6 +939,7 @@ namespace NotEnoughAV1Encodes
                     CheckBoxVBR.IsChecked = true;
 					TextBoxQmin.IsEnabled = true;
                     TextBoxQmax.IsEnabled = true;
+					SliderQuality.IsEnabled = false;
                 }
 				else
 				{
