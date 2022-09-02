@@ -1737,7 +1737,7 @@ namespace NotEnoughAV1Encodes
 		private string GenerateSvtHevcCommand()
         {
             string settings ="-nostdin -f yuv4mpegpipe - | " +
-                              "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin";
+                              "\"" + Path.Combine(Directory.GetCurrentDirectory(), "Apps", "svt-hevc", "SvtHevcEncApp.exe") + "\" -i stdin" + " -n " + GenerateFrameCount();
                               
             // Quality / Bitrate Selection
             string quality = ComboBoxQualityMode.SelectedIndex switch
@@ -1781,6 +1781,38 @@ namespace NotEnoughAV1Encodes
                 9 => "ultrafast",
                 _ => "medium",
             };
+        }
+
+        private string GenerateFrameCount()
+        {
+            int seconds = TextBoxChunkLength.Text;
+
+            // Custom Framerate
+            if (ComboBoxVideoFrameRate.SelectedIndex != 0)
+            {
+                try
+                {
+                    string selectedFramerate = ComboBoxVideoFrameRate.Text;
+                    if (ComboBoxVideoFrameRate.SelectedIndex == 6) { selectedFramerate = "24"; }
+                    if (ComboBoxVideoFrameRate.SelectedIndex == 9) { selectedFramerate = "30"; }
+                    if (ComboBoxVideoFrameRate.SelectedIndex == 13) { selectedFramerate = "60"; }
+                    int frames = int.Parse(selectedFramerate) * seconds;
+                    return frames.ToString();
+                } catch { }
+            }
+
+            // Framerate of Video if it's not VFR and MediaInfo Detected it
+            if (!videoDB.MIIsVFR && !string.IsNullOrEmpty(videoDB.MIFramerate))
+            {  
+                try
+                {
+                    int framerate = int.Parse(videoDB.MIFramerate);
+                    int frames = framerate * seconds;
+                    return frames.ToString();
+                } catch { }
+            }
+
+            return "240";
         }
 
         private string GenerateKeyFrameInerval()
