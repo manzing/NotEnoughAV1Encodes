@@ -80,7 +80,7 @@
         public int SvtAv1TileColumns { get; set; }
         public int SvtAv1TileRows { get; set; }
         public string SvtAv1KeyInt { get; set; } = "-1";
-        public string SvtAv1Lookahead { get; set; } = "33";
+        public string SvtAv1Lookahead { get; set; } = "-1";
 
         // Advanced VPX-VP9 Settings
         public int Vp9Threads { get; set; } = 5;
