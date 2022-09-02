@@ -1785,7 +1785,7 @@ namespace NotEnoughAV1Encodes
 
         private string GenerateFrameCount()
         {
-            int seconds = TextBoxChunkLength.Text;
+            int seconds = int.Parse(TextBoxChunkLength.Text);
 
             // Custom Framerate
             if (ComboBoxVideoFrameRate.SelectedIndex != 0)
