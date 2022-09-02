@@ -244,7 +244,7 @@ namespace NotEnoughAV1Encodes.Video
             }
             
             // x265, x264, SVT-HEVC (FFMpeg)
-            if (queueElement.EncodingMethod is 9 or 10 or 11)
+            if (queueElement.EncodingMethod is 9 or 10)
             {
                 Global.Logger("DEBUG - VideoMuxer.Concat() => Reading Chunk Directory by *.mp4 files", queueElement.Output + ".log");
                 sortedChunks = Directory.GetFiles(Path.Combine(Global.Temp, "NEAV1E", queueElement.UniqueIdentifier, "Video"), "*.mp4").OrderBy(f => f);
